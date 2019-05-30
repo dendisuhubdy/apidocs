@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Bitwyre API Docs</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#public-api" class="toc-h1 toc-link" data-title="Public API">Public API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#server-time" class="toc-h2 toc-link" data-title="Server Time">Server Time</a>
+                  </li>
+                  <li>
+                    <a href="#asset-pairs" class="toc-h2 toc-link" data-title="Asset Pairs">Asset Pairs</a>
+                  </li>
+                  <li>
+                    <a href="#ticker" class="toc-h2 toc-link" data-title="Ticker">Ticker</a>
+                  </li>
+                  <li>
+                    <a href="#trades" class="toc-h2 toc-link" data-title="Trades">Trades</a>
+                  </li>
+                  <li>
+                    <a href="#depth" class="toc-h2 toc-link" data-title="Depth">Depth</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#private-api" class="toc-h1 toc-link" data-title="Private API">Private API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-account-balance" class="toc-h2 toc-link" data-title="Getting Account Balance">Getting Account Balance</a>
+                  </li>
+                  <li>
+                    <a href="#getting-account-statement" class="toc-h2 toc-link" data-title="Getting Account Statement">Getting Account Statement</a>
+                  </li>
+                  <li>
+                    <a href="#opening-a-new-order" class="toc-h2 toc-link" data-title="Opening a New Order">Opening a New Order</a>
+                  </li>
+                  <li>
+                    <a href="#getting-open-orders" class="toc-h2 toc-link" data-title="Getting Open Orders">Getting Open Orders</a>
+                  </li>
+                  <li>
+                    <a href="#getting-closed-orders" class="toc-h2 toc-link" data-title="Getting Closed Orders">Getting Closed Orders</a>
+                  </li>
+                  <li>
+                    <a href="#getting-order-info" class="toc-h2 toc-link" data-title="Getting Order Info">Getting Order Info</a>
+                  </li>
+                  <li>
+                    <a href="#cancelling-an-open-order" class="toc-h2 toc-link" data-title="Cancelling an Open Order">Cancelling an Open Order</a>
+                  </li>
+                  <li>
+                    <a href="#getting-trade-history" class="toc-h2 toc-link" data-title="Getting Trade History">Getting Trade History</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://bitwyre.com'>2019, Bitwyre Technologies LLC</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<blockquote>
+<p>On success</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"some array or object of result(s)"</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>On error</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"some (array) of error message(s)"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Welcome to the Bitwyre API!</p>
+
+<p>All API URLs should use the domain <a href="https://api.bitwyre.com">https://api.bitwyre.com</a></p>
+
+<p>We have Public and Private API.
+Public endpoints can use either <code>GET</code> or <code>POST</code>.
+Private endpoints must use <code>POST</code> and be set up using the Authentication schema desribed below.</p>
+
+<p>All endpoints returns either a JSON object or array along with some error messages (if any).</p>
+<h1 id='public-api'>Public API</h1><h2 id='server-time'>Server Time</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/public/time"</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"unixtime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as unix timestamp"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rfc1123"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as RFC 1123 time format"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns server&#39;s time.</p>
+
+<p>This helps in approximating the time difference between the server and client.</p>
+<h3 id='endpoint'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/public/time</code></p>
+<h2 id='asset-pairs'>Asset Pairs</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/public/pairs"</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"pairs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcidr,ethidr"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns a comma delimited tradable asset pairs array.</p>
+<h3 id='endpoint-2'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/public/pairs</code></p>
+<h2 id='ticker'>Ticker</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/public/ticker"</span>
+  -d <span class="s2">"asset=btcidr"</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"126989000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115201000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vol_btc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"611.66499447"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vol_idr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74343249431"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124783000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"buy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124761000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124777000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"server_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1558935734</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns ticker information for an asset pair.</p>
+<h3 id='endpoint-3'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/public/ticker</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>Asset pair to get info on.</td>
+</tr>
+</tbody></table>
+<h2 id='trades'>Trades</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/public/ticker"</span>
+  -d <span class="s2">"asset=btcidr&amp;n=2"</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1558936592"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124126000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.04488142"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13074941"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1558936592"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124132000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00436307"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13074940"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns last <code>n</code> trades for an asset pair.</p>
+
+<p>Limited to a maximum of <code>50</code> last trades.</p>
+<h3 id='endpoint-4'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/public/ticker</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>Asset pair to get info on.</td>
+</tr>
+<tr>
+<td>n</td>
+<td>Last <code>n</code> trades to get info on.</td>
+</tr>
+</tbody></table>
+<h2 id='depth'>Depth</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/public/depth"</span>
+  -d <span class="s2">"asset=btcidr&amp;n=2"</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"buy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="mi">124112000</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.18154050"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="mi">124110000</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.47319750"</span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="mi">124130000</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.03701609"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="mi">124251000</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.03223585"</span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns depth data for an asset pair.</p>
+
+<p>Limited to a maximum of <code>150</code> data points.</p>
+<h3 id='endpoint-5'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/public/ticker</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>Asset pair to get info on.</td>
+</tr>
+<tr>
+<td>n</td>
+<td>Number of data points to get.</td>
+</tr>
+</tbody></table>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use something like this:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -d <span class="s2">"param1=value1&amp;param2=value2"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>someapikey</code> with your <code>api-key</code>.</p>
+</blockquote>
+
+<p>Bitwyre uses HTTP Header authentication to allow access to the API. You can get a new Bitwyre API key pairs (<code>api-key</code> and <code>secret-key</code>) at our <a href="http://bitwyre.com/developers">developer portal</a>.</p>
+
+<p>All Private API requests must be done using <code>POST</code> and Bitwyre expects for the following headers to be included in all API requests to the server:</p>
+
+<ul>
+<li><code>API-Key: someapikey</code></li>
+<li><code>API-Sign: signature</code></li>
+</ul>
+
+<p>Message <code>signature</code> is created using HMAC-SHA512 of <code>(URI path + SHA256(nonce + POST data))</code> and <code>secret-key</code>.
+<code>POST data</code> is something like <code>param1=value1&amp;param2=value2</code>.</p>
+
+<aside class="notice">
+Replace <code>someapikey</code> with your `api-key`.
+</aside>
+<h1 id='private-api'>Private API</h1><h2 id='getting-account-balance'>Getting Account Balance</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/account/balance"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"idr"</span><span class="p">:</span><span class="w"> </span><span class="mi">20190522</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="mi">227</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eth"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.14</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w"> </span><span class="err">#and</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">other</span><span class="w"> </span><span class="err">coin</span><span class="w"> </span><span class="err">balances</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieve all user&#39;s fiat and crypto balance.</p>
+<h3 id='endpoint'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/account/balance</code></p>
+
+<aside class="notice">
+No parameter required for this endpoint.
+</aside>
+<h2 id='getting-account-statement'>Getting Account Statement</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/account/statement"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"idr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bank"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"idr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392135074</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"success_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"149980000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392135074</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"success_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="err">...</span><span class="w"> </span><span class="err">#other</span><span class="w"> </span><span class="err">coins</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"idr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bank"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"idr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392193569</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"success_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392193569</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"btc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"success_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1391979201</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="err">...</span><span class="w"> </span><span class="err">#other</span><span class="w"> </span><span class="err">coins</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieve user&#39;s withdraw and deposit history.</p>
+<h3 id='endpoint-2'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/account/statement</code></p>
+
+<aside class="notice">
+No parameter required for this endpoint.
+</aside>
+<h2 id='opening-a-new-order'>Opening a New Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/order/create"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -d <span class="s2">"pair=btcidr&amp;type=buy&amp;ordertype=limit&amp;price=125000000&amp;volume=500000&amp;test=false"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"validation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"1234"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Create a new trade order.</p>
+<h3 id='endpoint-3'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/order/create</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pair</td>
+<td>true</td>
+<td>btcidr, ethidr, etc.</td>
+<td>Pair to open new order on.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>true</td>
+<td>buy/sell</td>
+<td>Type of order. Buying against or selling against.</td>
+</tr>
+<tr>
+<td>ordertype</td>
+<td>true</td>
+<td>market/limit</td>
+<td>Market price order or limit price order.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>false</td>
+<td>numerical</td>
+<td>Depends upon <code>ordertype</code>. Only on <code>market</code> is optional, otherwise required. In either decimal or double.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>true</td>
+<td>numerical</td>
+<td>Order volume in either decimal or double.</td>
+</tr>
+<tr>
+<td>test</td>
+<td>true</td>
+<td>true/false</td>
+<td>If true, validate inputs only. Order is not submitted and no <code>order_id</code> will be returned.</td>
+</tr>
+</tbody></table>
+<h2 id='getting-open-orders'>Getting Open Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/order/show/open"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -d <span class="s2">"pair=btcidr"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"btcidr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392227908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"closed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ordertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"235000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"265000"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1235"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392256167</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"closed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ordertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"135000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"135000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"165000"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieves curent open orders.</p>
+<h3 id='endpoint-4'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/order/show/open</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pair</td>
+<td>false</td>
+<td>btcidr, ethidr, etc.</td>
+<td>Pair to get open orders on. If not present, will return all open orders from all assets.</td>
+</tr>
+</tbody></table>
+<h2 id='getting-closed-orders'>Getting Closed Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/order/show/closed"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -d <span class="s2">"pair=btcidr"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"btcidr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392227908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"closed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1393337908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ordertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1235"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392256167</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"closed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1393348908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ordertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"135000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"165000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125000"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieves curent closed orders. Similar to order history.</p>
+<h3 id='endpoint-5'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/order/show/closed</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pair</td>
+<td>false</td>
+<td>btcidr, ethidr, etc.</td>
+<td>Pair to get open orders on. If not present, will return all open orders from all assets.</td>
+</tr>
+</tbody></table>
+<h2 id='getting-order-info'>Getting Order Info</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/order/show"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -d <span class="s2">"orderid=1234"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"btcidr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392227908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"closed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1393337908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ordertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieves information on specific orders.</p>
+<h3 id='endpoint-6'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/order/show</code></p>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderid</td>
+<td>true</td>
+<td>integer</td>
+<td>Array of <code>orderid</code>s to get info from.</td>
+</tr>
+</tbody></table>
+<h2 id='cancelling-an-open-order'>Cancelling an Open Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/order/cancel"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -d <span class="s2">"orderid=1235"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"btcidr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1235"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"submit_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392256167</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"closed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1393348908</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ordertype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"135000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"165000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125000"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieves information on specific orders.</p>
+<h3 id='endpoint-7'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/order/show</code></p>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderid</td>
+<td>true</td>
+<td>integer</td>
+<td><code>orderid</code> to cancel.</td>
+</tr>
+</tbody></table>
+<h2 id='getting-trade-history'>Getting Trade History</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.bitwyre.com/private/trade/show"</span>
+  -H <span class="s2">"API-Key: someapikey"</span>
+  -H <span class="s2">"API-Sign: somesignature"</span>
+  -d <span class="s2">"pair=btcidr"</span>
+  -X POST
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"btcidr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"tx_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31324"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392266167</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"135000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60750"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00045"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieves some latest buying/selling transaction history.</p>
+<h3 id='endpoint-8'>Endpoint</h3>
+<p><code>https://api.bitwyre.com/private/trade/show</code></p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pair</td>
+<td>false</td>
+<td>btcidr, ethidr, etc.</td>
+<td>Pair to get transaction history on.</td>
+</tr>
+<tr>
+<td>count</td>
+<td>false</td>
+<td>integer</td>
+<td>Number of transactions to be returned. Defaults to 1000.</td>
+</tr>
+<tr>
+<td>from_id</td>
+<td>false</td>
+<td>integer</td>
+<td>Starting tx_id of results. Exclusive.</td>
+</tr>
+<tr>
+<td>to_id</td>
+<td>false</td>
+<td>integer</td>
+<td>Ending tx_id of results. Inclusive.</td>
+</tr>
+<tr>
+<td>from_time</td>
+<td>false</td>
+<td>timestamp</td>
+<td>Starting UNIX time of results. Exclusive.</td>
+</tr>
+<tr>
+<td>to_time</td>
+<td>false</td>
+<td>timestamp</td>
+<td>Starting UNIX time of results. Inclusive.</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Bitwyre API uses the following HTTP error codes:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized</td>
+<td>Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Oops. You&#39;re not allowed to access that.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Whatever you&#39;re looking for could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed</td>
+<td>You tried to access stuffs with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable</td>
+<td>You requested a format that isn&#39;t processable.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone</td>
+<td>The things you requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+<td>We refuse to <code>brew</code> your coffee because you&#39;ve been banned.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+<td>You&#39;re calling in too fast! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td>We had a problem on our side. Try again later. Sorry!</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+<td>We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
